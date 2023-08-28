@@ -2,7 +2,7 @@ import React, { useEffect, useState  } from 'react'
 import { Input } from '@material-tailwind/react'
 import { HorizontalCard } from './HorizontalCard'
 import axios from 'axios'
-const ApiURL = 'http://localhost:8081/api'
+const ApiURL = 'http://localhost:3000/api'
 
 export const CitiesMain = () => {
   const [cities, setCities] = useState([])
