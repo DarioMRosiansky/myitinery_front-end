@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const ApiURL = 'http://localhost:3000/api'
+const ApiURL = 'http://localhost:8081/api/cities'
 import DetailsCard from "./DetailsCard";
 import { useParams } from "react-router-dom";
 

@@ -1,6 +1,7 @@
-
 import './App.css'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
+
+
 
 import Home from './pages/Home'
 import Cities from './pages/Cities'
@@ -17,9 +18,7 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-    <>
-    <RouterProvider router={router}/>
-    </>
+        <RouterProvider router={router} />
 
   )
 }
