@@ -2,7 +2,7 @@ import React, { useEffect, useState  } from 'react'
 import { Input } from '@material-tailwind/react'
 import { HorizontalCard } from './HorizontalCard'
 import axios from 'axios'
-const ApiURL = 'http://localhost:3000/api'
+const ApiURL = 'http://localhost:3000/api/cities'
 
 export const CitiesMain = () => {
   const [cities, setCities] = useState([])
@@ -18,7 +18,7 @@ export const CitiesMain = () => {
   }
   
   useEffect(() => {
-    axios(ApiURL).then((res) => {
+    server.get(ApiURL+'/cities').then((res) => {
       setCities(res.data.cities)
       setBackupCities(res.data.cities)
     })

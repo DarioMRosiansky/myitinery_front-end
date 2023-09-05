@@ -30,8 +30,21 @@ export const  filterCitiesAction = createAction('FilterCities', (event)=>{
     }
 })
 
+
+export const getCitiesIdAction = createAsyncThunk('getCitiesId', async(id )=>{
+    try {
+        const data =  await server.get('/cities/'+id)
+        console.log("data",data.data.response)
+        return  data.data.response
+    } catch (error) {
+        console.log(error);
+        return []
+    }
+})
+
 export default { 
     getCitiesAction,
     getBackupCitiesAction,
-    filterCitiesAction
+    filterCitiesAction,
+    getCitiesIdAction
 }

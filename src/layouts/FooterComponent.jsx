@@ -19,7 +19,7 @@ const FooterComponent = ({ text,bg }) => {
       <div>
         <ul className='flex flex-row justify-start gap-1 m:gap-10 py-5'>
           <li>My Tinerary</li>
-          <li >Dario Camacho</li>
+          <li >Dario Rosiansky</li>
           <li >2023</li>
         </ul>
       </div>

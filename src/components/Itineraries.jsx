@@ -1,16 +1,17 @@
+import { useDispatch,useSelector } from 'react-redux'
+import { getItinerariesAction } from '../redux/actions/itineraryActions'
+
 import React, { useEffect, useState } from 'react'
 import ItineraryCard from './ItineraryCard'
 import axios from 'axios'
-const itineraryURL = "http://localhost:8081/api/itineraries"
+const itineraryURL = "http://localhost:3000/api/itineraries"
 
 const Itineraries = ({ idCity = "" }) => {
 
-	const [itineraries, setItineraries] = useState([])
-
+	const itineraries = useSelector(store => store.itinerary.itineraries)
+	const dispatch = useDispatch()
 	useEffect(() => {
-		axios(`${itineraryURL}/city/${idCity}`).then((res) => {
-			setItineraries(res.data.response)
-		})
+		dispatch(getItinerariesAction(idCity))
 	}, [idCity])
 
 	return (
