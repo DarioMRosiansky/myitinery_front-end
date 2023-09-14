@@ -58,10 +58,9 @@ export default function Login() {
 					<div className="absolute px-5 bg-white">Or</div>
 				</div>
 				<div className="flex mt-4 gap-x-2">
-					<GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
+					
 						<GoogleButtonLogin />
-					</GoogleOAuthProvider>
-				</div>
+					</div>
 
 				<p className="mt-8 text-xs font-light text-center text-gray-700">
 					{" "}
