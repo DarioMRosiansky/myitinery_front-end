@@ -1,11 +1,10 @@
 import { toast } from "react-toastify";
 import { server } from "../../utils/axios";
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
 export const signInAction = createAsyncThunk('signInAction', async (body) => {
     try {
-        const data = await axios.post(`/auth/signin`, body)
+        const data = await server.post(`/auth/signin`, body)
         console.log("signIn", body);
         localStorage.setItem('token', data.data.token)
         console.log(data.data);
@@ -43,9 +42,21 @@ export const signInAction = createAsyncThunk('signInAction', async (body) => {
 export const signUpAction = createAsyncThunk('signUpAction', async (body) => {
     console.log("signup", body);
     try {
-        const data = await axios.post(`/signup`, body)
+        const data = await server.post(`/auth/signup`, body)
         localStorage.setItem('token', data.data.token)
         console.log("data signup" + data);
+        
+        toast.success('Welcome ' , {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+
         return data.data
     } catch (error) {
         console.log("error ", error.response);
