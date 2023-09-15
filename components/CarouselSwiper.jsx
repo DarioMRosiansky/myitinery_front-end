@@ -44,7 +44,7 @@ export default function CarouselSwiper() {
         {
         slicedArray.map((city) => {
           return <SwiperSlide key={city.city} className="text-white grid grid-cols-2 no-wrap gap-y-1 gap-x-3">
-          <Slide cities={city}></Slide>
+          <Slide key={city.city} cities={city}></Slide>
           </SwiperSlide>
         })
       }
